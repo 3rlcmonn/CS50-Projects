@@ -1,0 +1,51 @@
+months = [
+    "january",
+    "february",
+    "march",
+    "april",
+    "may",
+    "june"
+    "july",
+    "august",
+    "september",
+    "october",
+    "november",
+    "december"
+]
+month_dict = {
+    "january": "01",
+    "february": "02",
+    "march": "03",
+    "april": "04",
+    "may": "05",
+    "june": "06",
+    "july": "07",
+    "august": "08",
+    "september": "09",
+    "october": "10",
+    "november": "11",
+    "december": "12"
+}
+
+while True:
+    date = input("Input date as XX/XX/XXXX or Month XX, XXXX: ")
+
+# XX/XX/XXXX
+
+    try:
+        a, b, c = date.split("/")
+        if 1 <= int(a) <= 12 and 1 <= int(b) <= 31 and len(c) == 4:
+            print(c + "-" + a + "-" + b)
+        break
+    except:
+
+# Month XX, XXXX
+
+        try:
+            j, k, l = date.split(" ")
+            k = k.replace(",", "")
+            if j.lower() in months and 1 <= int(k) <= 31 and len(l) == 4:
+                print(f"{l}-{month_dict[j.lower()]}-{int(k):02}")
+                break
+        except:
+            continue
