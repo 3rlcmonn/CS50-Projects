@@ -1,0 +1,48 @@
+func = input("Please indicate which function you would like to use: \n"
+             "celsius to fahrenheit, \n"
+             "fahrenheit to celsius, \n"
+             "celsius to kelvin, \n"
+             "fahrenheit to kelvin, \n"
+             "kelvin to celsius, \n"
+             "kelvin to fahrenheit ").lower().replace(" ", "")
+inp = int(input("What temperature are you converting from? "))
+
+def fahrenheitToCelsius(inp):
+    Cel = (inp - 32) * (5/9)
+    print(f"It is {Cel} degrees Celsius. ")
+
+def celsiusToKelvin(inp):
+    Kel = inp + 273.15
+    print(f"It is {Kel} degrees Kelvin. ")
+
+def celsiusToFahrenheit(inp):
+    Fahr = inp * (9/5) + 32
+    print(f"It is {Fahr} degrees Fahrenheit. ")
+
+def fahrenheitToKelvin(inp):
+    Kel = (inp -32) * (5/9) + 273.15
+    print(f"It is {Kel} degrees Kelvin. ")
+
+def kelvinToFahrenheit(inp):
+    Fahr = (inp - 273.15) * (9/5) + 32
+    print(f"It is {Fahr} degrees Fahrenheit. ")
+
+def kelvinToCelsius(inp):
+    Cel = inp - 273.15
+    print(f"It is {Cel} degrees Celsius. ")
+
+
+if func == "fahrenheittocelsius":
+    fahrenheitToCelsius(inp)
+elif func == "celsiustofahrenheit":
+    celsiusToFahrenheit(inp)
+elif func == "fahrenheittokelvin":
+    fahrenheitToKelvin(inp)
+elif func == "celsiustokelvin":
+    celsiusToKelvin(inp)
+elif func == "kelvintocelsius":
+    kelvinToCelsius(inp)
+elif func == "kelvintofahrenheit":
+    kelvinToFahrenheit(inp)
+else:
+    print("Error either function or value incorrect")
